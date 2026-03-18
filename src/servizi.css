@@ -1,0 +1,511 @@
+/* ==========================================
+   RESET E BASE
+========================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: sans-serif;
+  background: #f9f9f8;
+  color: #0f0e0c;
+  overflow-x: hidden; /* Evita lo scorrimento laterale brutto */
+}
+
+/* ==========================================
+   HEADER / MENU (CORRETTO)
+========================================== */
+header {
+  position: sticky;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 10px 0;
+  background: black;
+  height: 70px; /* Altezza fissa per gestire meglio il logo */
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Spinge social e hamburger a destra */
+  position: relative;
+  height: 100%;
+}
+
+.logo {
+  height: 80px; 
+  width: auto;
+  position: absolute;
+  left: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
+  z-index: 1001;
+}
+
+/* --- STILE DESKTOP (Sopra 769px) --- */
+@media (min-width: 769px) {
+    .hamburger { display: none; }
+    
+    nav {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+
+    #nav-menu { display: block !important; }
+}
+
+/* --- STILE MOBILE (Sotto 768px) --- */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        z-index: 1002;
+    }
+    
+    .hamburger span {
+        display: block; width: 25px; height: 3px; 
+        background: #00F2FF; margin: 5px 0;
+    }
+
+    /* FIX: Rimosso il posizionamento centrale che rompeva tutto */
+    nav {
+        position: static; 
+        transform: none;
+        left: auto;
+    }
+
+    #nav-menu {
+        display: none; 
+        position: absolute;
+        top: 100%; 
+        left: 0; 
+        width: 100%; /* Prende tutto lo schermo */
+        background: #0B0E14;
+        text-align: center;
+        padding: 30px 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    }
+
+    #nav-menu.active {
+        display: block !important;
+    }
+
+    #nav-menu ul { 
+        flex-direction: column; 
+        gap: 25px; 
+    }
+    
+    /* Nascondiamo i social su mobile se danno fastidio o mettiamoli in riga */
+    .social {
+        display: none; 
+    }
+}
+
+/* --- LINK STILE --- */
+nav a {
+  text-decoration: none;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #00F2FF;
+  font-weight: bold;
+}
+
+nav a:hover, nav a.active {
+  color: #FFB380;
+}
+
+.social a {
+  color: #00F2FF;
+  margin-left: 15px;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+#servizi-page {
+    background: #0B0E14;
+    color: white;
+    padding: 100px 20px;
+}
+
+.servizi-intro {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.servizi-intro h1 { font-size: 3.5rem; text-transform: uppercase; }
+.highlight { color: #00F2FF; } /* Ciano Robotico */
+
+/* Layout a righe alternate */
+.servizio-row {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 120px;
+    flex-wrap: wrap;
+}
+
+.servizio-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.servizio-img {
+    flex: 1;
+    min-width: 350px;
+    border-radius: 30px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 242, 255, 0.2);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.servizio-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.servizio-row:hover .servizio-img img {
+    transform: scale(1.05);
+}
+
+.servizio-desc {
+    flex: 1;
+    min-width: 350px;
+}
+
+.servizio-num {
+    font-size: 4rem;
+    font-weight: bold;
+    color: rgba(255, 179, 128, 0.1); /* Oro Rosa molto trasparente */
+    line-height: 1;
+    margin-bottom: -20px;
+}
+
+.servizio-desc h2 {
+    color: #FFB380; /* Oro Rosa Romantico */
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.check-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 25px;
+}
+
+.check-list li {
+    margin-bottom: 10px;
+    padding-left: 30px;
+    position: relative;
+    color: rgba(255,255,255,0.8);
+}
+
+/* Iconcina check Ciano */
+.check-list li::before {
+    content: "⚡"; /* O usa FontAwesome \f0e7 */
+    position: absolute;
+    left: 0;
+    color: #00F2FF;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .servizio-row, .servizio-row.reverse {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+/* --- SEZIONE CONTATTI --- */
+#contatti {
+  padding: 80px 30px;
+  background: #0B0E14; /* Sfondo scuro come il logo */
+  color: white;
+}
+
+.contatti-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* --- INFO SINISTRA --- */
+.contatti-info h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #00F2FF; /* Ciano Robotico */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.contact-detail {
+  margin-bottom: 25px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 15px;
+  border-radius: 12px;
+  border-left: 3px solid #FFB380; /* Dettaglio Oro Rosa */
+}
+
+.contact-detail span {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #00F2FF;
+  margin-bottom: 5px;
+  letter-spacing: 1px;
+}
+
+.contact-detail a {
+  text-decoration: none;
+  color: #FFB380; /* Oro Rosa */
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.contact-detail a:hover {
+  color: white;
+  padding-left: 5px;
+}
+
+/* --- FORM DESTRA --- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 242, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+input, textarea {
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 179, 128, 0.2);
+  border-radius: 10px;
+  font-size: 1rem;
+  color: white;
+  outline: none;
+  transition: 0.3s;
+}
+
+input:focus, textarea:focus {
+  border-color: #00F2FF;
+  box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+}
+
+/* Placeholder più chiaro per lo sfondo scuro */
+::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* --- BOTTONE INVIA --- */
+button[type="submit"] {
+  padding: 15px 30px;
+  background: transparent;
+  color: #00F2FF;
+  border: 2px solid #00F2FF;
+  cursor: pointer;
+  border-radius: 50px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.4s ease;
+  margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+  background: #00F2FF;
+  color: #0B0E14;
+  box-shadow: 0 0 20px rgba(0, 242, 255, 0.5);
+  transform: translateY(-3px);
+}
+
+/* --- CONTATTO RAPIDO (Tasto chiamata) --- */
+.contatto-rapido {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.label-tech {
+    color: #00F2FF;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.btn-chiamata {
+    color: #FFB380 !important;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding: 12px 25px;
+    border: 1px solid #FFB380;
+    border-radius: 50px;
+    transition: all 0.4s ease;
+    background: transparent;
+    display: inline-block;
+}
+
+.btn-chiamata:hover {
+    color: #0B0E14 !important;
+    background: #FFB380;
+    box-shadow: 0 0 15px rgba(255, 179, 128, 0.5);
+    transform: scale(1.05);
+}
+
+/* Responsive per Tablet/Mobile */
+@media (max-width: 900px) {
+  .contatti-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+footer {
+    background-color: #292b2d; /* Il tuo Blu Notte Tech */
+    padding: 60px 20px 20px;
+    border-top: 1px solid rgba(0, 242, 255, 0.1); /* Sottile linea Ciano */
+    color: #ffffff;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap; /* Per farlo andare a capo su mobile */
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 250px; /* Impedisce che le colonne diventino troppo strette */
+}
+
+/* STILE MENU VERTICALE */
+.footer-nav h3, .footer-social h3 {
+    color: #254b4d; /* Ciano Robotico per i titoli */
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-nav ul {
+    list-style: none; /* Toglie i pallini */
+    padding: 0;
+}
+
+.footer-nav ul li {
+    margin-bottom: 12px; /* Spazio tra i link */
+}
+
+.footer-nav ul li a {
+    color: #FFB380; /* Il tuo Oro Rosa Romantico */
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 1rem;
+}
+
+.footer-nav ul li a:hover {
+    color: #00F2FF;
+    padding-left: 5px; /* Piccolo movimento "tech" al passaggio */
+}
+
+/* LOGO E TESTO BRAND */
+.footer-logo {
+    max-width: 150px;
+    margin-bottom: 15px;
+}
+
+.footer-brand p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* SOCIAL NEL FOOTER (riprendendo il tuo stile precedente) */
+#footer-social-icons a {
+    color: #FFB380 !important;
+    font-size: 1.5rem;
+    margin-right: 15px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+#footer-social-icons a:hover {
+    color: #00F2FF !important;
+    transform: translateY(-3px);
+    display: inline-block;
+}
+
+/* BARRA COPYRIGHT */
+.footer-bottom {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+@media (max-width: 900px) {
+  .chi-grid,
+  .contatti-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .servizi-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .partner-logos {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  nav {
+    display: none;
+  }
+
+  .servizi-grid,
+  .partner-logos {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+

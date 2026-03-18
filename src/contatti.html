@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta name="keywords" content="sito di prova in html e css">
+    <meta name="description" content="sito di prova in html e css">
+    <meta name="author" content="RoDiDo">
+    <meta name="generator" content="Visual Studio Code">
+    <meta name="copyright" content="2026 RoDiDo">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domo home</title>
+    <link rel="icon" type="image/png" href="../assets/img/favicon copia.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="/src/contatti.css">
+</head>
+<body>
+<header>
+     <div class="nav-container">
+        <img class="logo" src="/assets/img/logo.png" alt="logo">
+        <div class="hamburger" onclick="toggleMenu()">
+             <span></span>
+             <span></span>
+             <span></span>
+        </div>
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="chi-siamo.html">Chi Siamo</a></li> 
+                    <li><a href="servizi.html">Servizi</a></li>
+                    <li><a href="contatti.html" class="active">Contatti</a></li>
+                </ul>
+            </nav> 
+            <div class="social">
+                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>  
+    </div>
+</header>
+<!-- CONTATTI -->
+<section id="contatti">  <!-- id, non class! -->
+    <div class="contatti-inner">
+        <!-- Colonna sinistra: info -->
+        <div class="contatti-info">
+            <p>Contattaci</p>
+            <h2>Parliamo del tuo progetto</h2>
+            <div class="contact-detail">
+                <span>Email</span>
+                <a href="mailto:info@studio.it">info@studio.it</a>
+            </div>
+         <div class="contatto-rapido">
+            <span class="label-tech">ASSISTENZA SMART:</span>
+            <a href="tel:+393471234567" class="btn-chiamata">
+            <i class="fas fa-headset"></i> +39 347 123 4567
+             </a>
+        </div>
+        </div>
+        <!-- Colonna destra: form -->
+        <form action="https://formspree.io/f/meerpzkw" method="POST">
+            <input type="text"   name="Nome" placeholder="Nome">
+            <input type="email"  name="email" placeholder="Email">
+            <input type="text"   name="oggetto" placeholder="Oggetto">
+            <textarea rows="4"   name="messaggio" placeholder="Messaggio..."></textarea>
+            <button type="submit">Invia</button>
+        </form>
+
+    </div>
+</section>
+<!-- FOOTER -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-column footer-brand">
+            <img src="/assets/img/logo.png" alt="Logo Domotica" class="footer-logo">
+            <p>La tecnologia con il cuore. Rendiamo la tua casa un organismo intelligente e accogliente.</p>
+        </div>
+
+        <div class="footer-column footer-nav">
+            <h3>Link Rapidi</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="chi-siamo.html">Chi Siamo</a></li> 
+                <li><a href="#servizi">Servizi</a></li>
+                <li><a href="contatti.html" class="active">Contatti</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column footer-social">
+            <h3>Seguici</h3>
+              <div class="social">
+                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div> 
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Domotica Cuore - Marito e Moglie, Elettricità e Domotica.</p>
+    </div>
+</footer>
+<script>
+function toggleMenu() {
+    var x = document.getElementById("nav-menu");
+    x.classList.toggle("active");
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta name="keywords" content="sito di prova in html e css">
+    <meta name="description" content="sito di prova in html e css">
+    <meta name="author" content="RoDiDo">
+    <meta name="generator" content="Visual Studio Code">
+    <meta name="copyright" content="2026 RoDiDo">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domo servizi</title>
+    <link rel="icon" type="image/png" href="/assets/img/favicon copia.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="/src/servizi.css">
+</head>
+<body>
+<header>
+    <div class="nav-container">
+        <img class="logo" src="/assets/img/logo.png" alt="logo">
+        <div class="hamburger" onclick="toggleMenu()">
+             <span></span>
+             <span></span>
+             <span></span>
+        </div>
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="chi-siamo.html">Chi Siamo</a></li> 
+                    <li><a href="servizi.html" class="active">Servizi</a></li>
+                    <li><a href="contatti.html">Contatti</a></li>
+                </ul>
+            </nav> 
+            <div class="social">
+                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>  
+    </div>
+</header>
+<section id="servizi-page">
+    <div class="container">
+        <header class="servizi-intro">
+            <h1>Soluzioni <span class="highlight">Intelligenti</span></h1>
+            <p>Dalla progettazione elettrica all'integrazione domotica: rendiamo la tua casa un organismo vivo.</p>
+        </header>
+
+        <div class="servizi-list">
+            
+            <div class="servizio-row">
+                <div class="servizio-img">
+                    <img src="/assets/img/domo3.webp" alt="Illuminazione Smart">
+                </div>
+                <div class="servizio-desc">
+                    <div class="servizio-num">01</div>
+                    <h2>Illuminazione Emozionale</h2>
+                    <p>Non solo luce, ma scenari. Creiamo sistemi che regolano l'intensità e il colore in base alla luce naturale e ai tuoi momenti della giornata.</p>
+                    <ul class="check-list">
+                        <li>Controlli RGB e Dimmerazione</li>
+                        <li>Automazione basata su sensori</li>
+                        <li>Scenari "Cinema", "Relax" o "Lavoro"</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="servizio-row reverse">
+                <div class="servizio-img">
+                    <img src="/assets/img/tende.webp" alt="Automazione Tende">
+                </div>
+                <div class="servizio-desc">
+                    <div class="servizio-num">02</div>
+                    <h2>Oscuranti & Tende</h2>
+                    <p>Gestisci il clima e la privacy in modo automatico. Tende e tapparelle che si chiudono quando il sole è troppo forte o quando vai a dormire.</p>
+                    <ul class="check-list">
+                        <li>Integrazione con stazioni meteo</li>
+                        <li>Chiusura centralizzata di sicurezza</li>
+                        <li>Programmazione oraria intelligente</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="servizio-row">
+                <div class="servizio-img">
+                    <img src="/assets/img/ventola.webp" alt="Clima Smart">
+                </div>
+                <div class="servizio-desc">
+                    <div class="servizio-num">03</div>
+                    <h2>Ricambio Aria Aria Fresca</h2>
+                    <p>Portiamo l'aria pulita dall'esterno direttamente all'interno. Ideale per rinfrescare rapidamente l'ambiente dopo la doccia.</p>
+                    <ul class="check-list">
+                        <li>Ventilazione a Flusso Continuo</li>
+                        <li>Controllo Intelligente della Velocità (0-100%)</li>
+                        <li>Controllo remoto via smartphone</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- CONTATTI -->
+<section id="contatti">  <!-- id, non class! -->
+    <div class="contatti-inner">
+        <!-- Colonna sinistra: info -->
+        <div class="contatti-info">
+            <p>Contattaci</p>
+            <h2>Parliamo del tuo progetto</h2>
+            <div class="contact-detail">
+                <span>Email</span>
+                <a href="mailto:info@studio.it">info@studio.it</a>
+            </div>
+         <div class="contatto-rapido">
+            <span class="label-tech">ASSISTENZA SMART:</span>
+            <a href="tel:+393471234567" class="btn-chiamata">
+            <i class="fas fa-headset"></i> +39 347 123 4567
+             </a>
+        </div>
+        </div>
+        <!-- Colonna destra: form -->
+        <form action="https://formspree.io/f/meerpzkw" method="POST">
+            <input type="text"   name="Nome" placeholder="Nome">
+            <input type="email"  name="email" placeholder="Email">
+            <input type="text"   name="oggetto" placeholder="Oggetto">
+            <textarea rows="4"   name="messaggio" placeholder="Messaggio..."></textarea>
+            <button type="submit">Invia</button>
+        </form>
+
+    </div>
+</section>
+<!-- FOOTER -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-column footer-brand">
+            <img src="/assets/img/logo.png" alt="Logo Domotica" class="footer-logo">
+            <p>La tecnologia con il cuore. Rendiamo la tua casa un organismo intelligente e accogliente.</p>
+        </div>
+
+        <div class="footer-column footer-nav">
+            <h3>Link Rapidi</h3>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="chi-siamo.html">Chi Siamo</a></li> 
+                <li><a href="#servizi">Servizi</a></li>
+                <li><a href="contatti.html">Contatti</a></li>
+            </ul>
+        </div>
+        <div class="footer-column footer-social">
+            <h3>Seguici</h3>
+               <div class="social">
+                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div> 
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Domotica Cuore - Marito e Moglie, Elettricità e Domotica.</p>
+    </div>
+</footer>
+<script>
+function toggleMenu() {
+    var x = document.getElementById("nav-menu");
+    x.classList.toggle("active");
+}
+</script>
+</body>
+</html>
